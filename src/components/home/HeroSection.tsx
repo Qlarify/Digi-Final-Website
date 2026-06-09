@@ -92,7 +92,6 @@ export function HeroSection() {
                 animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
                 transition={{ duration: 1, delay: 1.0, ease: [0.16,1,0.3,1] }}>
                 Premium video production for India&apos;s renowned brands.
-                World-class editing for agencies and creators everywhere.
               </motion.p>
 
               {/* CTAs */}
