@@ -6,7 +6,11 @@
   Core principle: Restraint. Space. Scale. One accent. Perfect type.
 */
 
-*, *::before, *::after { box-sizing: border-box; padding: 0; margin: 0; }
+/* NOTE: do NOT add an unlayered `* { padding:0; margin:0 }` reset here —
+   Tailwind v4 preflight already resets margin/padding inside @layer base,
+   and an unlayered universal reset overrides every Tailwind p-/pt-/px-/py-
+   utility (unlayered beats layered), silently zeroing padding site-wide. */
+*, *::before, *::after { box-sizing: border-box; }
 
 :root {
   /* ── Surfaces ── */
@@ -167,7 +171,10 @@ html.lenis, html.lenis body { height: auto; }
 .wrap {
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 0 var(--pad-x);
+  /* Side-only padding (NOT the padding shorthand) so Tailwind vertical
+     padding utilities on the same element are not reset to zero. */
+  padding-left: var(--pad-x);
+  padding-right: var(--pad-x);
 }
 .section {
   padding-top: var(--gap-section);
