@@ -42,11 +42,12 @@
   --rule-2:   rgba(0,0,0,0.12);
   --rule-dark: rgba(255,255,255,0.07);
 
-  /* ── Rhythm — generous negative space for a premium feel ── */
-  --gap-section: clamp(7rem, 13vw, 15rem);
-  --gap-inner:   clamp(3.5rem, 6vw, 6.5rem);
-  --pad-x:       clamp(1.5rem, 6vw, 5rem);
-  --max-w:       1200px;
+  /* ── Rhythm — balanced negative space (tight enough to feel composed,
+        open enough to feel premium). ── */
+  --gap-section: clamp(4rem, 6.5vw, 7.5rem);
+  --gap-inner:   clamp(2.5rem, 4vw, 4.5rem);
+  --pad-x:       clamp(1.5rem, 5vw, 4rem);
+  --max-w:       1180px;
 
   /* ── Easing ── */
   --expo:   cubic-bezier(0.16, 1, 0.3, 1);

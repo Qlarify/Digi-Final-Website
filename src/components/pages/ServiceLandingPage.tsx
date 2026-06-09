@@ -71,7 +71,8 @@ export function ServiceLandingPage({ data }: { data: ServiceData }) {
 
       {/* ── STATS ── */}
       <section className="bg-white" style={{ borderTop: "1px solid var(--rule)", borderBottom: "1px solid var(--rule)" }}>
-        <div className="wrap py-16 grid grid-cols-2 sm:grid-cols-4 gap-8">
+        <div className="wrap py-14">
+         <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-8 gap-x-6 max-w-3xl mx-auto">
           {data.stats.map((stat, i) => (
             <motion.div key={stat.label}
               initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
@@ -82,6 +83,7 @@ export function ServiceLandingPage({ data }: { data: ServiceData }) {
               <div className="micro uppercase tracking-widest">{stat.label}</div>
             </motion.div>
           ))}
+         </div>
         </div>
       </section>
 
