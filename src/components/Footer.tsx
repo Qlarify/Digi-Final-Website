@@ -51,7 +51,7 @@ export function Footer() {
               <div className="w-7 h-7 rounded-[8px] bg-[#066766] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                 <span className="text-white font-black text-[11px]" style={{ fontFamily: "Montserrat, sans-serif" }}>D</span>
               </div>
-              <span className="font-black text-[15px] tracking-[-0.025em] text-[#0A0A0A]" style={{ fontFamily: "Montserrat, sans-serif" }}>
+              <span className="font-black text-[15px] tracking-[-0.025em] text-[#066766]" style={{ fontFamily: "Montserrat, sans-serif" }}>
                 Digitinize
               </span>
             </Link>
