@@ -12,22 +12,17 @@ export function ExitIntentPopup() {
 
   useEffect(() => {
     // Don't show if already dismissed this session
-    if (dismissed || sessionStorage.getItem('exit_dismissed')) return;
+    if (dismissed || sessionStorage.getItem("exit_dismissed")) return;
 
+    // Only arm exit-intent AFTER the user has scrolled past the hero.
+    // This prevents the popup firing when the cursor moves to the top
+    // edge to reach the navigation (which would block the menu).
     const onMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0 && !dismissed) setShow(true);
+      if (e.clientY <= 0 && window.scrollY > 900 && !dismissed) setShow(true);
     };
 
-    // Also show on 60% scroll + 45s
-    const timer = setTimeout(() => {
-      if (!dismissed) setShow(true);
-    }, 45000);
-
-    document.addEventListener("mouseleave", onMouseLeave);
-    return () => {
-      document.removeEventListener("mouseleave", onMouseLeave);
-      clearTimeout(timer);
-    };
+    document.addEventListener("mouseout", onMouseLeave);
+    return () => document.removeEventListener("mouseout", onMouseLeave);
   }, [dismissed]);
 
   const dismiss = () => {
