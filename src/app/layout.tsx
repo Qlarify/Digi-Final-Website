@@ -6,8 +6,6 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { PageTransition } from "@/components/PageTransition";
-import { UrgencyBanner } from "@/components/UrgencyBanner";
-import { StickyBottomBar } from "@/components/StickyBottomBar";
 import { ExitIntentPopup } from "@/components/ExitIntentPopup";
 
 const montserrat = Montserrat({

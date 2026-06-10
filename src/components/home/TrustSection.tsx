@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { Shield, Clock, RefreshCw, Lock, Star, HeadphonesIcon, ArrowRight } from "lucide-react";
 import { AnimateIn, StaggerIn, StaggerChild } from "@/components/AnimateIn";
 import { MagneticButton } from "@/components/MagneticButton";

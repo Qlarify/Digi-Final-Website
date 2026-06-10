@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
-import { X, Download, ArrowRight } from "lucide-react";
+import { X, Download } from "lucide-react";
 
 export function ExitIntentPopup() {
   const [show, setShow] = useState(false);
@@ -74,7 +73,7 @@ export function ExitIntentPopup() {
                   <div className="text-center py-4">
                     <div className="text-4xl mb-3">🎬</div>
                     <p className="font-bold text-[#0a0a0a] mb-1">Guide sent to your inbox!</p>
-                    <p className="text-[13px] text-[#717171]">Check your email — we'll follow up within 24 hours.</p>
+                    <p className="text-[13px] text-[#717171]">Check your email — we&apos;ll follow up within 24 hours.</p>
                     <button onClick={dismiss} className="mt-4 text-[13px] text-[#a0a0a0] underline">Close</button>
                   </div>
                 ) : (

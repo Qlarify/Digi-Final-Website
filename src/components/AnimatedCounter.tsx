@@ -21,25 +21,27 @@ export function AnimatedCounter({
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
   const [count, setCount] = useState(0);
-  const [started, setStarted] = useState(false);
+  const startedRef = useRef(false);
 
   useEffect(() => {
-    if (!inView || started) return;
-    setStarted(true);
+    if (!inView || startedRef.current) return;
+    startedRef.current = true;
 
     const startTime = performance.now();
     const easeOut = (t: number) => 1 - Math.pow(1 - t, 3);
+    let raf = 0;
 
     const tick = (now: number) => {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
       setCount(Math.floor(easeOut(progress) * end));
-      if (progress < 1) requestAnimationFrame(tick);
+      if (progress < 1) raf = requestAnimationFrame(tick);
       else setCount(end);
     };
 
-    requestAnimationFrame(tick);
-  }, [inView, end, duration, started]);
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [inView, end, duration]);
 
   return (
     <span ref={ref} className={className}>

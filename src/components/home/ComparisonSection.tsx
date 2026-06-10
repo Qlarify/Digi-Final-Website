@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Check, X, Minus } from "lucide-react";
-import { AnimateIn, StaggerIn, StaggerChild } from "@/components/AnimateIn";
+import { AnimateIn } from "@/components/AnimateIn";
 
 const features = [
   { feature: "Broadcast-quality output",       diy: false,   freelancer: "sometimes", digitinize: true },
