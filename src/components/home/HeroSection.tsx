@@ -165,11 +165,12 @@ export function HeroSection() {
               </motion.div>
 
               <VideoPreview
-                src="/videos/hero-reel.mp4"
+                src="/videos/hero-india.mp4"
                 label="Digitinize Showreel 2025"
-                meta="Selected work · 2024–25"
+                meta="Crafted in India · Seen worldwide"
                 duration="1:24"
                 autoplayInView
+                cinematic
                 ratio="4 / 5"
                 rounded="rounded-3xl"
                 className="shadow-2xl shadow-black/20"

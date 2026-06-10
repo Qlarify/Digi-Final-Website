@@ -13,6 +13,7 @@ interface Props {
   rounded?: string;        // tailwind rounding class
   autoplayInView?: boolean;// for hero showreel
   ratio?: string;          // aspect-ratio css value, default 16/9
+  cinematic?: boolean;     // slow ken-burns zoom + teal grade (hero)
 }
 
 export function VideoPreview({
@@ -24,6 +25,7 @@ export function VideoPreview({
   rounded = "rounded-2xl",
   autoplayInView = false,
   ratio = "16 / 9",
+  cinematic = false,
 }: Props) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const vidRef = useRef<HTMLVideoElement>(null);
@@ -79,7 +81,7 @@ export function VideoPreview({
       role="button"
       tabIndex={0}
       aria-label={`Play video: ${label}`}
-      className={`reel-frame group ${rounded} ${className} focus:outline-none focus-visible:ring-2 focus-visible:ring-[#066766] focus-visible:ring-offset-2 cursor-pointer`}
+      className={`reel-frame group ${rounded} ${className} ${cinematic ? "cine-grade" : ""} focus:outline-none focus-visible:ring-2 focus-visible:ring-[#066766] focus-visible:ring-offset-2 cursor-pointer`}
       style={{ aspectRatio: ratio }}
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
@@ -92,7 +94,7 @@ export function VideoPreview({
       {src && (
         <video
           ref={vidRef}
-          className="absolute inset-0 w-full h-full object-cover"
+          className={`absolute inset-0 w-full h-full object-cover ${cinematic ? "cine-zoom" : ""}`}
           src={`${src}#t=0.1`}
           muted
           loop

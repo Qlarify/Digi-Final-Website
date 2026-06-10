@@ -43,11 +43,11 @@ export function Navigation() {
             }}
           >
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-7 h-7 rounded-[8px] bg-[#066766] flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
-                <span className="text-white font-black text-[11px]" style={{ fontFamily: "Montserrat, sans-serif" }}>D</span>
+            <Link href="/" className="flex items-center gap-2.5 group">
+              <div className="w-10 h-10 rounded-[11px] bg-[#066766] flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
+                <span className="text-white font-black text-[15px]" style={{ fontFamily: "Montserrat, sans-serif" }}>D</span>
               </div>
-              <span className="font-black text-[15px] tracking-[-0.025em] text-[#066766]" style={{ fontFamily: "Montserrat, sans-serif" }}>
+              <span className="font-black text-[20px] tracking-[-0.025em] text-[#066766]" style={{ fontFamily: "Montserrat, sans-serif" }}>
                 Digitinize
               </span>
             </Link>

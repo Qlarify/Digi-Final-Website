@@ -463,3 +463,20 @@ html.lenis, html.lenis body { height: auto; }
 /* Pulsing REC dot */
 @keyframes rec { 0%,100% { opacity:1; } 50% { opacity:0.25; } }
 .rec-dot { animation: rec 1.4s ease-in-out infinite; }
+
+/* Cinematic hero treatment — slow Ken-Burns zoom + teal colour grade */
+@keyframes ken-burns {
+  0%   { transform: scale(1.04) translate3d(0,0,0); }
+  50%  { transform: scale(1.12) translate3d(-1.5%, -1%, 0); }
+  100% { transform: scale(1.04) translate3d(0,0,0); }
+}
+.cine-zoom { animation: ken-burns 24s ease-in-out infinite; will-change: transform; }
+/* Teal cinematic grade overlay for the hero reel */
+.cine-grade::after {
+  content: '';
+  position: absolute; inset: 0; z-index: 15; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(6,103,102,0.10) 0%, transparent 30%, rgba(10,23,22,0.22) 100%),
+    radial-gradient(120% 80% at 50% 0%, transparent 55%, rgba(6,103,102,0.18) 100%);
+  mix-blend-mode: multiply;
+}
